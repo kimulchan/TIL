@@ -74,5 +74,6 @@ const reset=()=>{
     UpDown.innerText='';
 
     window.rendNum=rend();
+    In.select();
        
 }
