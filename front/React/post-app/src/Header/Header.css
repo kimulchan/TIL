@@ -1,0 +1,13 @@
+.Head{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Title{
+color: rgb(19, 187, 33);
+    font-size: 30px;
+    font-weight: 600;
+    
+}
