@@ -6,8 +6,8 @@ for (i=0; i<23; i++){
     board+='<tr>'
     for(j=0; j<33; j++){
         board+=`<td id="${i} ${j}"></td>`
-        
     }
+    
     board+='</tr>'
   
 }
@@ -22,6 +22,7 @@ for(i=0; i<23; i++){
         }
     }
 }
+
 let x=16;
 let y=11;
 let len=1;
