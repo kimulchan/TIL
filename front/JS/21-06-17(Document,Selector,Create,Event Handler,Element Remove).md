@@ -48,3 +48,4 @@
    - 제거하고자 하는 element.parentNode.removeChild(제거하고자 하는 element)
 3. element.remove()
    - 요소를 제거함
+
