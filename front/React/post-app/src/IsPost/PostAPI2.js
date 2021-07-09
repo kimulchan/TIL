@@ -9,15 +9,27 @@ function PostAPI() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [num,setNum]=useState(0);
-  let N=0;
+  const [reload,setReloda]=useState(true);
+  useEffect(()=>{
+    window.addEventListener('scroll', () => {
+        let scrollLocation = document.documentElement.scrollTop; // 현재 스크롤바 위치
+        let windowHeight = window.innerHeight; // 스크린 창
+        let fullHeight = document.body.scrollHeight; //  margin 값은 포함 x
+        if(scrollLocation+windowHeight>=fullHeight) {
+            setReloda(true);
+        }
+        
+    })
+  },[])   
   const fetchUser = async (props) => {
+    if(loading) return
     try {
       setError(null);
       setLoading(true);
       let response = await axios.get(
         `https://api.eungyeol.live/feed/list?page=${props}`
       );
-    
+      setNum(n=>n+1);
       setData([...Data, ...response.data]);
     } catch (e) {
       setError(e);
@@ -26,26 +38,13 @@ function PostAPI() {
   };
 
   useEffect(()=>{
-    fetchUser(num);
-    
-  },[num]);
-  let nextN=0;
-  useEffect(()=>{
-        window.addEventListener('scroll', () => {
-
-        let scrollLocation = document.documentElement.scrollTop; // 현재 스크롤바 위치
-        let windowHeight = window.innerHeight; // 스크린 창
-        let fullHeight = document.body.scrollHeight; //  margin 값은 포함 x
+    if(reload){
+        fetchUser(num);
         
-        if(scrollLocation+windowHeight>=fullHeight){
-            nextN++
-            setNum(nextN);
-        }  
     }
-    )
-    
-    console.log(num);
-  },[])
+    setReloda(false)
+  },[reload]);
+ 
   useEffect(()=>{
     console.log(Data);
   },[Data])
