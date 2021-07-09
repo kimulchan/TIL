@@ -6,6 +6,7 @@
     margin:15px 0;   
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0,0, 0, 0.3);
+    background-color: white;
 }
 .name{
     font-size: 17px;
@@ -25,9 +26,9 @@
 }
 .Semicolon{
     
-    animation: 2s linear 0s infinite normal none running Spin;
+    animation: 1s linear 0s infinite normal none running Spin;
     position: relative;
-    transform: rotate(1turn);
+    transform: rotate(2turn);
     width: 30px;
     height: 30px;
 }

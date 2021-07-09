@@ -7,6 +7,7 @@ function Header(){
             <div className='Title'>
                 Forest Post
             </div>
+            
             <Menu></Menu>
         </div>
     );
